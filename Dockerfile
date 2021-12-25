@@ -1,5 +1,5 @@
 # pull official base image
-FROM node:alpine
+FROM node:alpine AS react-dev
 # set working directory
 WORKDIR /frontend
 # add `/app/node_modules/.bin` to $PATH
