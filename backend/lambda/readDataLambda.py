@@ -40,6 +40,16 @@ def lambda_handler(event, context):
 		(noteTuple,)
 	)
 
+	result = cur.fetchall()
+
+	resultNotes = []
+
+	for r in result:
+		resultNotes.append(r[2])
+
+	cur.close()
+	conn.close()
+
 	return {
-		"result": cur.fetchall()
+		"result": resultNotes
 	}
