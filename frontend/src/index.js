@@ -6,7 +6,6 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 const script = document.createElement("script");
-console.log(process.env.REACT_APP_GMAPS_API_KEY);
 script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GMAPS_API_KEY}&callback=initMap`;
 script.async = true;
 
