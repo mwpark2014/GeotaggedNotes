@@ -6,6 +6,8 @@ WORKDIR /frontend
 ENV PATH /app/node_modules/.bin:$PATH
 
 # install app dependencies
+# In order to install new dependencies, the docker image needs to be rebuilt
+# or npm install needs to be run through the docker dontainer
 COPY frontend/package*.json ./
 RUN ls
 RUN npm install
