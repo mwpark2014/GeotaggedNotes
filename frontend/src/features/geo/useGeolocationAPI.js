@@ -1,11 +1,13 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
+import { GEOLOCATION_OPTIONS } from './MapConstants';
 
 function useGeolocationAPI() {
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.watchPosition(
         onGeolocateSuccess,
-        onGeolocateFailure
+        onGeolocateFailure,
+        GEOLOCATION_OPTIONS,
       );
     }
   }, []);
@@ -17,7 +19,7 @@ function onGeolocateSuccess({ coords }) {
 }
 
 function onGeolocateFailure(err) {
-  console.error("ERROR(" + err.code + "): " + err.message);
+  console.error('ERROR(' + err.code + '): ' + err.message);
 }
 
 export default useGeolocationAPI;
